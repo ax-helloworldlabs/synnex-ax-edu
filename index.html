@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-73LEW05GGH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-73LEW05GGH');
+</script>
+<script>
+  // 버튼 클릭 이벤트: 교육 신청 문의 / 교육 자료 요청 / 상세보기
+  (function(){
+    var COURSE = (location.pathname.match(/courses\/([\w-]+)\.html/) || [])[1] || 'main';
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.href || '', name = null, p = {course: COURSE, link_text: (a.textContent || '').trim().slice(0, 40), link_url: href};
+      if (href.indexOf('hjqWgsnAE5qmAMrV7') > -1) name = 'request_material';
+      else if (/forms\.gle\/|docs\.google\.com\/forms\//.test(href)) name = 'apply_inquiry';
+      else if (/courses\/[\w-]+\.html/.test(href) && COURSE === 'main') { name = 'view_course'; p.course = href.match(/courses\/([\w-]+)\.html/)[1]; }
+      if (!name) return;
+      p.button_position = a.closest('.kg-bar') ? 'bottom_bar' : 'body';
+      gtag('event', name, p);
+    }, true);
+  })();
+</script>
+
+<title>AX 공개교육 | 시넥스 × 헬로월드랩스</title>
+<meta name="description" content="시넥스 × 헬로월드랩스 2026년 11월 AX 공개교육. ChatGPT Work · Claude Cowork · n8n 3개 과정, 교육비 90% 환급.">
+<meta property="og:title" content="AX 공개교육 | 시넥스 × 헬로월드랩스">
+<meta property="og:description" content="ChatGPT Work · Claude Cowork · n8n 3개 과정, 교육비 90% 환급. 2026년 마지막 공개교육입니다.">
+<meta property="og:image" content="assets/thumbs/claude-cowork.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --primary:#1D4ED8;      /* 시넥스 메인 블루 (강조 문구·버튼) */
+  --primary-d:#1E40AF;
+  --primary-l:#EFF6FF;
+  --teal:#1D4ED8;         /* 시넥스 블루 */
+  --red:#6366F1;          /* 로고 반원 라인 퍼플블루 */
+  --ink:#111827;--text:#374151;--sub:#6B7280;--mute:#9CA3AF;
+  --line:#E5E7EB;--line2:#F3F4F6;--bg:#ffffff;--bg2:#F9FAFB;--dark:#111827;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;line-height:1.6;word-break:keep-all;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+
+
+/* 헤더 */
+.hd{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;height:80px;gap:24px}
+.logo{display:flex;align-items:center}
+.logo img{height:40px;width:auto}
+.co{display:flex;flex-direction:column;justify-content:center;padding-left:18px;border-left:1px solid var(--line);line-height:1.25;font-size:12px;color:var(--sub);white-space:nowrap}
+.co b{font-size:15px;font-weight:700;color:var(--ink)}
+.co small{font-size:11px;color:var(--mute)}
+.gnb{flex:1;display:flex;justify-content:flex-end;gap:40px;font-size:16px;font-weight:600}
+.gnb a{position:relative;padding:28px 0}
+.gnb a:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .2s}
+.gnb a:hover,.gnb a.on{color:var(--primary)}
+.gnb a:hover:after,.gnb a.on:after{transform:scaleX(1)}
+
+/* 서브 비주얼 */
+.sv{position:relative;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#111}
+.sv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(1.5px) grayscale(.3);transform:scale(1.03)}
+.sv:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(17,24,39,.9) 0%,rgba(29,78,216,.82) 55%,rgba(99,102,241,.66) 100%)}
+.sv .in{position:relative;z-index:1;padding:0 16px}
+.sv .eyebrow{display:inline-block;margin-bottom:14px;padding:5px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.08em}
+.sv h1{margin:0;font-size:clamp(32px,4.8vw,50px);font-weight:800;letter-spacing:-.03em}
+.sv p{margin:12px 0 0;font-size:clamp(15px,1.8vw,18px);font-weight:400;color:rgba(255,255,255,.88)}
+
+
+/* 인트로 */
+.intro{margin-top:72px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--teal);letter-spacing:.08em}
+.pill:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.intro h2{margin:14px 0 0;font-size:clamp(24px,3.2vw,34px);font-weight:700;line-height:1.4;letter-spacing:-.03em}
+.intro h2 em{font-style:normal;color:var(--primary)}
+.nw{white-space:nowrap}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px auto 0;max-width:960px}
+.fact{background:var(--bg2);border:1px solid var(--line2);border-radius:14px;padding:22px 18px}
+.fact small{display:block;font-size:13px;color:var(--sub)}
+.fact strong{display:block;margin-top:4px;font-size:22px;color:var(--ink);font-weight:800}
+.fact strong i{font-style:normal;color:var(--primary)}
+.fact span{display:block;margin-top:2px;font-size:13px;color:var(--sub)}
+
+/* 섹션 제목: 엘캠퍼스 메인처럼 가운데 정렬 + 설명 */
+.sec{padding:0 0 100px}
+.m-title{margin:96px 0 36px;text-align:center}
+.m-title h2{margin:0;font-size:clamp(26px,3vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.03em}
+.m-title h2 sup{margin-left:4px;font-size:.55em;color:var(--primary);vertical-align:super;font-weight:700}
+.m-title p{margin:14px 0 0;font-size:18px;font-weight:300;color:var(--sub)}
+
+/* 과정 카드 */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line2);border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.card{box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(29,78,216,.14)}
+.thumb{display:block;aspect-ratio:16/9;overflow:hidden;background:#111}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .thumb img{transform:scale(1.04)}
+.body{display:flex;flex-direction:column;flex:1;padding:20px 20px 22px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--line2);color:var(--text)}
+.tag.d{border-color:var(--primary);background:var(--primary);color:#fff}
+.cat{margin:12px 0 4px;font-size:12.5px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card h3{margin:0;font-size:18.5px;line-height:1.45;color:var(--ink);font-weight:700;letter-spacing:-.03em}
+.card h3 a:hover{color:var(--primary)}
+.desc{margin:8px 0 0;font-size:14px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{list-style:none;margin:14px 0 0;padding:14px 0 0;border-top:1px solid var(--line2);display:grid;gap:4px;font-size:13.5px;color:var(--text)}
+.meta li{position:relative;padding-left:12px}
+.meta li:before{content:"";position:absolute;left:2px;top:.75em;width:3px;height:3px;border-radius:50%;background:var(--mute)}
+.meta b{font-weight:600;color:var(--ink);margin-right:6px}
+.foot{margin-top:auto;padding-top:18px;display:grid;gap:12px}
+.price del{font-size:12.5px;color:var(--mute);white-space:nowrap}
+.price small{margin-left:6px;font-size:12.5px;font-weight:700;color:var(--primary);white-space:nowrap}
+.price strong{display:block;font-size:23px;font-weight:800;letter-spacing:-.02em}
+.more{height:48px;border-radius:8px;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;background:var(--primary);color:#fff;transition:background .2s}
+.more:hover{background:var(--primary-d)}
+
+/* 안내 카드 */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{border:1px solid var(--line2);border-radius:14px;padding:24px 26px;background:#fff}
+.box h4{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding-bottom:14px;border-bottom:1px solid var(--line2);font-size:18px;font-weight:700}
+.box h4 svg{width:20px;height:20px;color:var(--primary);flex:none}
+.box p,.box li{font-size:14.5px;color:var(--text)}
+.box p{margin:0}
+.box ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.box li:before{content:"- ";color:var(--mute)}
+
+/* 환급 절차 */
+.refund{margin-top:20px}
+.steps{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.box .steps li{position:relative;background:var(--bg2);border:1px solid var(--line2);border-radius:12px;padding:18px 16px 16px}
+.box .steps li:before{content:none}
+.box .steps li+li:after{content:"";position:absolute;left:-12px;top:50%;width:10px;height:10px;border-top:2px solid var(--primary);border-right:2px solid var(--primary);transform:translateY(-50%) rotate(45deg)}
+.steps .no{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--primary);border-radius:999px;padding:2px 9px}
+.steps b{display:block;margin-top:10px;font-size:16px;color:var(--ink)}
+.box .steps p{margin:4px 0 0;font-size:13.5px;color:var(--sub)}
+.box .lead-time{margin-top:18px;padding:14px 18px;border-radius:10px;background:var(--primary-l);font-size:14.5px;color:var(--ink)}
+.lead-time b{color:var(--primary);margin-right:8px}
+.lead-time strong{color:var(--primary-d)}
+.lead-time small{display:block;margin-top:2px;font-size:13px;color:var(--sub)}
+.box .notes{margin-top:14px}
+.box .notes li:before{content:"※ ";color:var(--mute)}
+.notes b{font-weight:700;color:var(--ink)}
+@media (max-width:820px){.steps{grid-template-columns:1fr 1fr}.box .steps li+li:after{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* 푸터: 엘캠퍼스 다크 푸터 */
+footer{background:var(--dark);color:rgba(250,250,250,.72);font-size:13.5px;padding:40px 0 48px}
+footer .wrap{display:grid;gap:14px}
+footer .f-logo img{height:36px;width:auto}
+footer .f-info{display:flex;flex-wrap:wrap;gap:4px 18px}
+footer strong{color:#fafafa;font-weight:600}
+footer .copy{margin:6px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);color:rgba(250,250,250,.45);font-size:12px}
+
+@media (max-width:1000px){.gnb{gap:24px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:820px){.gnb{gap:18px;font-size:14px}.info{grid-template-columns:1fr}}
+@media (max-width:520px){.gnb a:last-child{display:none}.co small{display:none}.co{padding-left:12px}}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .hd .wrap{height:64px;gap:14px}
+  .logo img{height:26px}
+  .sv{height:220px}
+  .intro{margin-top:52px}
+  .m-title{margin:72px 0 28px}
+  .m-title p{font-size:15px}
+  .facts{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="시넥스 AX 공개교육 홈"><img src="assets/img/synnex_logo.png" alt="시넥스 SYNNEX" width="241" height="100"></a>
+    <span class="co">with <b>헬로월드랩스</b><small>AX 전문 기업</small></span>
+    <nav class="gnb" aria-label="주 메뉴">
+      <a class="on" href="#courses">교육과정</a>
+      <a href="#guide">수강 안내</a>
+    </nav>
+  </div>
+</header>
+
+<section class="sv">
+  <img src="assets/img/venue.webp" alt="" aria-hidden="true">
+  <div class="in">
+    <span class="eyebrow">AX EDUCATION 2026</span>
+    <h1>AX 공개교육</h1>
+    <p>시넥스가 AX 전문 기업 헬로월드랩스와 협력해 진행하는 실무 교육 과정입니다.</p>
+  </div>
+</section>
+
+<main class="sec" id="courses">
+  <div class="wrap">
+
+    <div class="intro">
+      <span class="pill">SYNNEX × HELLOWORLDLABS · AX EDUCATION 2026</span>
+      <h2><span class="nw">ChatGPT Work</span> · <span class="nw">Claude Cowork</span> · <span class="nw">n8n</span>,<br><em>원하는 AI 도구를 골라 내 업무 생산성을 높여보세요.</em></h2>
+      <div class="facts">
+        <div class="fact"><small>교육비</small><strong><i>90%</i> 환급</strong><span>우선지원대상기업 고용보험 가입자</span></div>
+        <div class="fact"><small>교육 일정</small><strong>2026년 <i>11월</i></strong><span>09:00 ~ 18:00 오프라인</span></div>
+        <div class="fact"><small>실습 지원</small><strong>AI <i>유료 계정</i></strong><span>과정별 1개월 제공 (ChatGPT, Claude 등)</span></div>
+      </div>
+    </div>
+
+    <div class="m-title">
+      <h2>교육 과정</h2>
+      <p>내 업무 자료로 직접 실습하는 AI 실무 과정, 필요한 도구를 골라보세요.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+
+    <div class="m-title" id="guide">
+      <h2>수강 안내</h2>
+      <p>교육비 환급부터 교육 운영까지, 신청 전에 확인해 주세요.</p>
+    </div>
+    <div class="info">
+      <div class="box">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>교육비 환급</h4>
+        <ul>
+          <li>교육비 90% 환급 (우선지원대상기업 고용보험 가입자)</li>
+          <li>부가세 10%는 사업자 요건 충족 시 별도 환급</li>
+          <li><b>환급 요건 충족에도 환급되지 않으면 교육비 100% 전액 환불</b></li>
+          <li>과정별 AI 유료 계정 1개월 제공 (ChatGPT, Claude 등)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>교육 운영</h4>
+        <ul>
+          <li>모든 과정 09:00 ~ 18:00 오프라인 진행</li>
+          <li>장소·세부 일정은 과정별 상세페이지에서 확인</li>
+          <li>개인 노트북 지참</li>
+          <li>교육 신청은 과정별 상세페이지에서 진행</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box refund" id="refund">
+      <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>교육비 환급 절차</h4>
+      <ol class="steps">
+        <li><span class="no">01</span><b>교육비 납부</b><p>교육 시작 전 교육비 전액 납부</p></li>
+        <li><span class="no">02</span><b>교육 참여</b><p>과정 일정에 맞춰 오프라인 교육 수강</p></li>
+        <li><span class="no">03</span><b>수료·환급 신청</b><p>교육 종료 후 헬로월드랩스에서 수료 처리 및 환급 신청</p></li>
+        <li><span class="no">04</span><b>환급 완료</b><p>고용노동부에서 사업주 환급 계좌로 환급</p></li>
+      </ol>
+      <p class="lead-time"><b>환급 소요 기간</b> 환급 신청 후 보통 <strong>2~3주</strong> 정도 걸립니다.<small>심사 기관의 처리 일정이나 서류 보완 등 상황에 따라 더 늦어질 수 있습니다.</small></p>
+      <ul class="notes">
+        <li>입금자명은 <b>회사명</b>으로 기재해 주세요.</li>
+        <li>입금 계좌와 환급 계좌는 달라도 괜찮습니다.</li>
+        <li>여러 과정을 신청하시면 교육비는 <b>과정별로 각각</b> 입금해 주세요.</li>
+        <li>환급 요건을 충족했는데도 환급이 진행되지 않으면, (주)헬로월드랩스가 교육비 <b>100% 전액 환불</b>해 드립니다.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="f-logo"><img src="assets/img/synnex_logo_white.png" alt="시넥스 SYNNEX" width="241" height="100"></span>
+    <div class="f-info">
+      <span>주관 <strong>시넥스(SYNNEX Education)</strong></span>
+      <span>협력 AX 전문 기업 <strong>(주)헬로월드랩스</strong> · 중소기업 인재 키움 프리미엄 훈련 과정 승인 기관</span>
+    </div>
+    <p class="copy">&copy; 2026 Synnex Education. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* 과정 데이터: 과정 추가·수정은 여기서 */
+var COURSES = [
+  {
+    key: "chatgpt",
+    title: "ChatGPT Work로 만드는 나만의 AI 업무 비서",
+    cat: "[AX 레시피-업무 프로세스 개선] 현장의 반복 업무를 없애고 흐름을 만드는 생성형 AI",
+    desc: "자료 찾고, 옮기고, 고치는 일은 GPT에게 맡기고 나는 검토만. 회사 자료와 양식으로 내 업무용 GPT를 직접 만드는 실습 과정",
+    thumb: "assets/thumbs/chatgpt-work.webp",
+    period: "2일 과정 (16시간)",
+    price: 1000000,
+    detail: "courses/chatgpt-work.html"
+  },
+  {
+    key: "claude",
+    title: "Claude Cowork 기반 업무 자동화 실무",
+    cat: "[역량 강화: Claude] 기업 지식 자산화 및 지능형 업무 서포트 시스템 구현",
+    desc: "Gmail·캘린더·드라이브부터 회의 공지와 공급처 평가까지, Claude Cowork로 내 업무를 나눠 맡는 AI 팀과 반복 자동화를 직접 만드는 실무 교육",
+    thumb: "assets/thumbs/claude-cowork.webp",
+    period: "3일 과정 (24시간)",
+    price: 1300000,
+    detail: "courses/claude-cowork.html"
+  },
+  {
+    key: "n8n",
+    title: "n8n으로 코딩 없이 만드는 업무 자동화 AI 에이전트",
+    cat: "[역량 강화: n8n] 에이전틱 워크플로우를 활용한 전사적 비용 절감 솔루션 구축",
+    desc: "단순 자동화를 넘어 '스스로 판단하고 실행하는' AI 에이전트의 구조를 이해하고, n8n을 활용해 기업의 비용 구조를 개선하는 실전 구축형 과정",
+    thumb: "assets/thumbs/n8n-agent.webp",
+    period: "3일 과정 (24시간)",
+    price: 1300000,
+    detail: "courses/n8n-agent.html"
+  }
+];
+
+var REFUND = 0.9;   // 환급률
+
+function won(n){ return n.toLocaleString("ko-KR") + "원"; }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function render(){
+  var html = "";
+  COURSES.forEach(function(c){
+    html +=
+      '<article class="card">' +
+        '<a class="thumb" href="' + esc(c.detail) + '"><img src="' + esc(c.thumb) + '" alt="' + esc(c.title) + '" loading="lazy" width="960" height="540"></a>' +
+        '<div class="body">' +
+          '<div class="tags"><span class="tag">공개교육</span><span class="tag">90% 환급</span><span class="tag d">11월 개강</span></div>' +
+          '<p class="cat" title="' + esc(c.cat) + '">' + esc(c.cat) + '</p>' +
+          '<h3><a href="' + esc(c.detail) + '">' + esc(c.title) + '</a></h3>' +
+          '<p class="desc">' + esc(c.desc) + '</p>' +
+          '<ul class="meta"><li><b>기간</b>' + esc(c.period) + ' · 09:00 ~ 18:00</li><li><b>일정</b>장소별 개강일은 상세페이지에서 확인</li></ul>' +
+          '<div class="foot">' +
+            '<div class="price"><del>' + won(c.price) + '</del><small>' + Math.round(REFUND*100) + '% 환급 적용가</small><strong>' + won(Math.round(c.price*(1-REFUND))) + '</strong></div>' +
+            '<a class="more" href="' + esc(c.detail) + '">상세보기 →</a>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+  });
+  document.getElementById("grid").innerHTML = html;
+}
+
+render();
+</script>
+</body>
+</html>
